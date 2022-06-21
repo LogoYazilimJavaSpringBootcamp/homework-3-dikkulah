@@ -1,15 +1,14 @@
-package com.dikkulah.homework3.service;
-
-import com.dikkulah.homework3.model.Customer;
-import com.dikkulah.homework3.model.User;
-import com.dikkulah.homework3.repository.UserRepository;
+package com.dikkulah.isbasi.service;
+import com.dikkulah.isbasi.model.Customer;
+import com.dikkulah.isbasi.model.User;
+import com.dikkulah.isbasi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     private UserRepository userRepository;
     @Override
@@ -25,11 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByEmail(String email) {
-        return userRepository.findByEmail(email).orElseThrow();
+        return userRepository.findByEmail(email).orElseThrow(RuntimeException::new);
     }
 
     @Override
-    public List<Customer> getCustomersUserByEmail(String email) {
-        return userRepository.findCustomersByUserEmail(email).orElseThrow();
+    public List<Customer> getCustomersByUserEmail(String email) {
+        return userRepository.findCustomersByUserEmail(email).orElseThrow(RuntimeException::new);
     }
 }

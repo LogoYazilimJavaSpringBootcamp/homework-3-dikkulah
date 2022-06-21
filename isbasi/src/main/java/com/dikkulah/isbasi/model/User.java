@@ -1,6 +1,6 @@
-package com.dikkulah.homework3.model;
+package com.dikkulah.isbasi.model;
 
-import com.dikkulah.homework3.model.enums.FirmType;
+import com.dikkulah.isbasi.model.enums.FirmType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,13 +1,13 @@
-package com.dikkulah.homework3;
+package com.dikkulah.isbasi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Homework3Application {
+public class IsbasiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Homework3Application.class, args);
+		SpringApplication.run(IsbasiApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.dikkulah.homework3.model;
+package com.dikkulah.isbasi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

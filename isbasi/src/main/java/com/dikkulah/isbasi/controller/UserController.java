@@ -1,8 +1,8 @@
-package com.dikkulah.homework3.controller;
+package com.dikkulah.isbasi.controller;
 
-import com.dikkulah.homework3.model.Customer;
-import com.dikkulah.homework3.model.User;
-import com.dikkulah.homework3.service.UserService;
+import com.dikkulah.isbasi.model.Customer;
+import com.dikkulah.isbasi.model.User;
+import com.dikkulah.isbasi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +29,8 @@ public class UserController {
         return userService.getUserByEmail(email);
     }
     @GetMapping(value = "/{email}/customers")
-    public List<Customer> getCustomersUserByEmail(@PathVariable String email) {
-        return userService.getCustomersUserByEmail(email);
+    public List<Customer> getCustomersByUserEmail(@PathVariable String email) {
+        return userService.getCustomersByUserEmail(email);
     }
 
 }

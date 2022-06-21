@@ -1,7 +1,8 @@
-package com.dikkulah.homework3.repository;
+package com.dikkulah.isbasi.repository;
 
-import com.dikkulah.homework3.model.Customer;
-import com.dikkulah.homework3.model.User;
+
+import com.dikkulah.isbasi.model.Customer;
+import com.dikkulah.isbasi.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,13 +11,10 @@ import java.util.Optional;
 
 @Repository
 public class UserRepository {
-    private static List<User> userList =new ArrayList<>();
+    private static final List<User> userList =new ArrayList<>();
 
     public User save(User userRequest) {
-        /*userRequest.getCustomerList().add(new Customer("Ali"));
-        userRequest.getCustomerList().add(new Customer("Onur"));
 
-        userRequest.getCustomerList().add(new Customer("Enes"));*/
 
         userList.add(userRequest);
         return userRequest;
@@ -30,7 +28,7 @@ public class UserRepository {
         return userList.stream().filter(user -> user.getEmail().equals(email)).findFirst();
     }
 
-    public Optional<List<Customer>> findCustomersByUserEmail(String email) {
+    public Optional<List<Customer>>  findCustomersByUserEmail(String email) {
         return userList.stream().filter(user -> user.getEmail().equals(email)).map(User::getCustomerList).findFirst();
     }
 }
