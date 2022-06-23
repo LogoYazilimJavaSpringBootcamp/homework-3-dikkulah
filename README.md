@@ -1,4 +1,4 @@
-ActiveMQ, Kafka ve RabbitMQ karşılaştırın. Örnek kodlar ile nasıl çalıştığını
+• ActiveMQ, Kafka ve RabbitMQ karşılaştırın. Örnek kodlar ile nasıl çalıştığını
 anlatın. (10 Puan)
 
 • Microservis ve monolith mimariyi karşılaştırın.(10 Puan)
@@ -9,5 +9,7 @@ isbasi.com üye olup sisteme 3 yeni com.dikkulah.isbasi.model ekleyin ve mimariy
 CRUD işlemleri yapan endpointleri yazın. (50 Puan)
 
 • CustomerServisi için gerekli tüm endpoint’leri yazın. (10 Puan)
+   - `CommercialConroller`
 
-• Aktif ve pasif müşterileri listeleyen endpoint için gerekli kodu yazın. (10 Puan)
+• Aktif ve pasif müşterileri listeleyen endpoint için gerekli kodu yazın. (10 Puan) 
+   - `CommercialController aktif-pasif listeleme + hepsi için getAll`

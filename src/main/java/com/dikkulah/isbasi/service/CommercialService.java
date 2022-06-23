@@ -31,4 +31,8 @@ public class CommercialService {
     public Commercial updateCommercial(Long id, Commercial request) {
         return commercialRepository.updateCommercial(id,request);
     }
+
+    public List<Commercial> getCommercialByIsActive(Boolean isActive) {
+        return commercialRepository.findCommercialByIsActive(isActive);
+    }
 }

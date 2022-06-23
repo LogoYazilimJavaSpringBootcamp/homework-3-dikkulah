@@ -36,7 +36,7 @@ public class Commercial {
     private List<Person> relatedPersons;
     private List<Address> otherAddresses;
     private List<BankAccount> bankAccounts;
-
+    private List<Transaction> transactions;
 
 
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+
 @Repository
 public class CommercialRepository {
     private static final List<Commercial> commercialList = new ArrayList<>();
@@ -33,5 +34,9 @@ public class CommercialRepository {
         request.setId(id);
         commercialList.add(request);
         return request;
+    }
+
+    public List<Commercial> findCommercialByIsActive(Boolean isActive) {
+        return commercialList.stream().filter(commercial -> Objects.equals(commercial.getIsActive(), isActive)).toList();
     }
 }
