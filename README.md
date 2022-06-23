@@ -5,7 +5,7 @@ anlatın. (10 Puan)
 
 • SOAP - RESTful karşılaştırın (10 Puan)
 
-isbasi.com üye olup sisteme 3 yeni model ekleyin ve mimariye uygun şekilde
+isbasi.com üye olup sisteme 3 yeni com.dikkulah.isbasi.model ekleyin ve mimariye uygun şekilde
 CRUD işlemleri yapan endpointleri yazın. (50 Puan)
 
 • CustomerServisi için gerekli tüm endpoint’leri yazın. (10 Puan)
