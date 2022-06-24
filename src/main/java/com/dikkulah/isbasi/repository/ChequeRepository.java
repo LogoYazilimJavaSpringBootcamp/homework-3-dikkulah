@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class ChequeRepository {
-    static final List<Cheque> CHEQUE_LIST = new ArrayList<>();
+    private static final List<Cheque> CHEQUE_LIST = new ArrayList<>();
 
     public Cheque save(Cheque request) {
         CHEQUE_LIST.add(request);
