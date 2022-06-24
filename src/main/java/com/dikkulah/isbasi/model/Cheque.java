@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Cheque {
+public class Cheque { //ÇEK
     private Long id;
     private Commercial commercial;
     private LocalDate transactionDate;

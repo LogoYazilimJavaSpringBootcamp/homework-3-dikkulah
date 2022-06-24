@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Commercial {
+public class Commercial { // MÜŞTERİ TEDARİKÇİ
     private FirmType firmType;
     private Long  id;
     private CommercialType commercialType;

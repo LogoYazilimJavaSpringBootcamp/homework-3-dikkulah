@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Address {
+public class Address { // MÜŞTERİ TEDARİKÇİ ADRES ALANI
     private String addressTitle;
     private String fullName;
     private List<String> phones;

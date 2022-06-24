@@ -5,11 +5,11 @@ import com.dikkulah.isbasi.model.enums.ProductType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-//Hizmetler
+
 @Builder
 @Getter
 @Setter
-public class Product {
+public class Product {//Hizmet ve ürün
     private ProductType productType;
     private Long id;
     private String name;

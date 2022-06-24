@@ -18,6 +18,9 @@ public class User {
     private FirmType firmType;
     private Address address;
     private List<Commercial> commercialList;
+    private List<Till> tillList;
+    private List<Cheque> cheques;
+    private List<Bank> bankAccounts;
     private List<Invoice> purchaseInvoiceList;
     private List<Invoice> salesInvoiceList;
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Person {
+public class Person { //müşteri tedarikçideki ilişkili kişiler alanı
     private String fullName;
     private String telNo;
     private String email;
