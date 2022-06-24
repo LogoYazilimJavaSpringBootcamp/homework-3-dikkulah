@@ -8,11 +8,13 @@ import lombok.Setter;
 import java.time.LocalDate;
 @Getter
 @Setter
-@Builder
+@Builder //KASA
 public class Till {
+    private Long id;
     private String name;
     private String currency;
     private Long openingBalance;
     private LocalDate openingBalanceDate;
+    private Boolean isActive;
 
 }
