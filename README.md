@@ -1,23 +1,69 @@
 - # ActiveMQ, Kafka ve RabbitMQ karşılaştırın. Örnek kodlar ile nasıl çalıştığını anlatın. (10 Puan)
-   - a
+   - `RabbitMQ:`
+      - RabbitMQ Producer ve Consumer olmak üzere iki aktörü mevcuttur.
+         - Producer: Gönderilen mesajın sahibidir.
+         - Consumer: Mesajın alıcısıdır.
+         - Queue: Mesajların rabbitMQ üzerinde depolandığı ve sıraya eklendiği kuyruktur.
+         - Publisher mesajı publish ettikten sonra mesajı RabbiMQ’daki exchange karşılar.
+           Exchange aldığı mesajı rabbitMQ içerisindeki ilgili route üzerinden kuyruğa yönlendirir.
+           Mesajın exchange’ten kuyruğa nasıl gideceğinin bilgisi route üzerinde tanımlanır.
+           Mesajlar queue’de sıralanır. Queue bilindiği gibi FIFO mantığına sahiptir. Kuyrultaki mesajlar sırasıyla
+           consumer’a iletilir.
+         - RabbitMq şu senaryolarda daha iyidir:
+         - Farklı protokoller kullanılmak isteniyorsa, (AMQP, STOMP, MQTT, AMQP 1.0)
+         - Yüksek performansa ihtiyaç varsa
+         - Kolay bir entegrasyon isteniyorsa
+         - Mesajların ulaşmasını garanti olarak isteniyorsa
+         - Daha az sayıda mesajlaşma mevcutsa
+      - RabbitMQ Dezavantajları
+         - Yüksek hacimli bir mesajlaşma sistemi için uygun değildir.
+         - Consumer’lar sürekli online durumda kabul edilir. Eğer mesaj iletilmezse mesajıbeklemede olarak işaretler.
+         - Mesajlar persistent olarak saklanmak isteniyorsa RabbitMQ persistent modunda kullanılmalıdır. Bunun dışında
+           RabbitMQ restart edildiğinde kuyruktaki tüm mesajlar kaybolacaktır.
+   - `Kafka:`
+      - Kafka şu senaryolarda daha iyidir:
+         - RabbitMQ’da anlatılan konseptin benzerine sahiptir. Kafka da message broker yazılımıdır. Broker kendisinden
+           bir
+           mesaj gönderilmesi istendiğinde o mesajı gönderir ancak ulaşıp ulaşmadığını kontrol etmez. Queue
+           içerisindeki takip cursor’unun nerede kaldığı belli değildir. Bunu bilmesi gereken consumer’dır. Kafka
+           genellikle rabbitMQ’ya göre daha büyük ölçekli mesajlaşma uygulamalarında veya streaming
+           uygulamalarında
+           kullanılır. Streaming gibi servislerde tercih edilmesinin sebebi kuyruktaki mesajların kaybolmamasıdır ve
+           persistent olarak saklanmasıdır. Örneğin client izlediği bir videoyu geri sardığında broker, eski
+           mesajarı
+           kolayca getirip consumer’a iletebilir.
+         - Consumer’lar mesajı almak için anlık olarak broker’ı tetiklemek durumundaysa
+         - Mesajlar kaybolmamalıysa (Persistency)
+         - Kolay ölçeklenebilir bir yapı isteniyorsa
+         - Aynı anda çok sayıda fazla mesajlaşma yapılıyorsa
+         - Cursor’un queue’da nerede kaldığını consumer’ın kontol etmesi isteniyorsa
 
+      - Kafka Dezavantajları
+         - Native Kafka Protokol adında tek bir mesajlaşma protolü kullanır.
+         - .NET için 3rd party bir sdk kullanılmalıdır. Desteği resmi olarak mevcut değildir.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+   - `ActiveMQ:`
+      - Active MQ, amacı uygulamalar arasında güvenli ve güvenilir bir şekilde veri alışverişini sağlamak olan
+        geleneksel mesaj aracılarından biridir. Az miktarda veri ile ilgilenir ve bu nedenle iyi tanımlanmış mesaj
+        formatları ve işlemsel mesajlaşma için uzmanlaşmıştır.
+         - Aktif MQ/Artemis Kullanım Durumları
+         - Günde yalnızca az sayıda iletiyi işleyin
+         - Yüksek düzeyde güvenilirlik ve işlemsellik
+         - Anında veri dönüşümleri
+```
+     <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-activemq</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.kafka</groupId>
+        <artifactId>spring-kafka</artifactId>
+      </dependency>
+```
 - # Microservis ve monolith mimariyi karşılaştırın.(10 Puan)
    - ## Monolitik Mimari Nedir?
       - Monolitik Mimari, geleneksel uygulama geliştirme yöntemi olarak kabul edilir. Monolitik mimaride bir uygulama
